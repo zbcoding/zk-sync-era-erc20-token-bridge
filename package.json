@@ -1,0 +1,28 @@
+{
+  "name": "zk-era-erc20-bridge",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/adapter-static": "^2.0.2",
+    "@sveltejs/kit": "^1.5.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "postcss-load-config": "^4.0.1",
+    "stwui": "^0.13.0-next",
+    "svelte": "^3.54.0",
+    "svelte-preprocess": "^5.0.3",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.3.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "zksync-web3": "^0.14.3"
+  }
+}
