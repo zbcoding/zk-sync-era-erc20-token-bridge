@@ -1,6 +1,7 @@
-//Restart the application after changing these values
-
-//rename this file to .settings.js before using the app
+/*
+Restart the application after changing these values
+Rename this file to .settings.js before using the app
+*/
 
 export let env = {
 //remove from git before adding your private key
@@ -16,7 +17,6 @@ ZK_URL:"https://testnet.era.zksync.dev",
 
 //ZK_URL for mainnet:
 //"https://mainnet.era.zksync.io"
-
 //Testnet explorer, ZKSync
 //https://goerli.explorer.zksync.io/
 //Mainnet explorer, ZKSync
