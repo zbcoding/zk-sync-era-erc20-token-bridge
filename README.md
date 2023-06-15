@@ -4,7 +4,9 @@ unofficial experimental bridge for deposit and withdraw of regular erc20 tokens 
 
 ## How to run this:
 Run locally. I used vscode and already had npm installed.
-use `npm ci`, `npm run dev` to create local svelte app. Make changes in settings file such as adding a private key.
+use `npm ci`, `npm run dev` to create local svelte app.
+Copy the .settings.example.js file, rename to .settings.js. 
+Make changes in settings file such as adding a private key.
 
 Possible future improvements: 
 * move more sections into svelte components (migration from vanilla webpack)
