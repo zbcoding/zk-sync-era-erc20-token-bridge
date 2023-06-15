@@ -7,7 +7,7 @@ Run locally. I used vscode and already had npm installed.
 use `npm ci`, `npm run dev` to create local svelte app. Make changes in settings file such as adding a private key.
 
 Possible future improvements: 
-* move sections into svelte components
-* add metamask confirmations on zk sync interactions
+* move more sections into svelte components (migration from vanilla webpack)
+* add metamask confirmations on zk sync interactions if possible
 
 ![image](https://github.com/zbcoding/zk-sync-era-erc20-token-bridge/assets/56856630/5571479f-3212-40ce-bc90-cd39e3d0bd3e)

@@ -1,12 +1,19 @@
 <script>
   import "../app.postcss";
-  import { Layout } from "stwui";
+  import { Icon, Layout } from "stwui";
+  import { githubIcon } from "../../src/icons.js";
 </script>
 
 <Layout class="h-full">
   <Layout.Header class="flex z-0 p-4"
-    ><h3 class="flex justify-center">🌁 ZKSync Era ERC20 Bridge</h3>
-    <Layout.Header.Extra slot="extra" />
+    ><h3 class="flex justify-center m-2">🌁 ZKSync Era ERC20 Bridge</h3>
+    <Layout.Header.Extra slot="extra">
+      <a class="hover:text-blue-600" href="https://github.com/zbcoding">
+        <div class="inline-flex items-center m-2">
+          <Icon class="mr-1" data={githubIcon} />@zbcoding
+        </div>
+      </a>
+    </Layout.Header.Extra>
   </Layout.Header>
   <Layout.Content>
     <Layout.Content.Sidebar

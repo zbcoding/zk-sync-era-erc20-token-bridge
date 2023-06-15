@@ -2,11 +2,13 @@
     import { Button, Card, CheckboxGroup, Input, Media } from "stwui";
     import { fade } from "svelte/transition";
     import { env } from "../.settings.js";
+    import "../styles.css";
 
     import * as zksync from "zksync-web3";
     import { ethers } from "ethers";
     import { erc20abi } from "../erc20abi.js";
     import Notice from "./Notice.svelte";
+    import TxCard from "./TxCard.svelte";
 
     const PRIVATE_KEY = env.PRIVATE_KEY;
     const ZK_URL = env.ZK_URL;
@@ -356,7 +358,7 @@
 
 <main class="m-2">
     {#if !messageCheck}
-        <div in:fade out:fade="{{ duration: 100 }}" class="noticeSection">
+        <div in:fade out:fade={{ duration: 100 }} class="noticeSection">
             <Notice />
         </div>
     {/if}
@@ -430,25 +432,7 @@
                     >
                     <div style="display: block;" class="showDepositTx" />
                     {#if depositTxUrl.length > 0}
-                        <Card bordered={false}>
-                            <Card.Content slot="content">
-                                <Media>
-                                    <Media.Content>
-                                        <Media.Content.Title
-                                            >Transaction on Block Explorer</Media.Content.Title
-                                        >
-                                        <Media.Content.Description
-                                            ><a
-                                                class="text-blue-500 underline hover:no-underline font-medium"
-                                                href={depositTxUrl}
-                                                target="_blank"
-                                                >{depositTxUrl}</a
-                                            ></Media.Content.Description
-                                        >
-                                    </Media.Content>
-                                </Media>
-                            </Card.Content>
-                        </Card>
+                        <TxCard {depositTxUrl} />
                     {/if}
 
                     <Button
@@ -497,27 +481,8 @@
                         >
                         <div style="display: block;" class="showWithdrawSent" />
                         {#if withdrawTxUrl.length > 0}
-                            <Card bordered={false}>
-                                <Card.Content slot="content">
-                                    <Media>
-                                        <Media.Content>
-                                            <Media.Content.Title
-                                                >Transaction on Block Explorer</Media.Content.Title
-                                            >
-                                            <Media.Content.Description
-                                                ><a
-                                                    class="text-blue-500 underline hover:no-underline font-medium"
-                                                    href={withdrawTxUrl}
-                                                    target="_blank"
-                                                    >{withdrawTxUrl}</a
-                                                ></Media.Content.Description
-                                            >
-                                        </Media.Content>
-                                    </Media>
-                                </Card.Content>
-                            </Card>
+                            <TxCard txUrl={withdrawTxUrl} />
                         {/if}
-
                         <p class="m-2">
                             (After transaction reaches verified status on L2)
                         </p>
@@ -545,25 +510,7 @@
                             class="finalizeWithdrawSent"
                         />
                         {#if finalizeWithdrawTxUrl.length > 0}
-                            <Card bordered={false}>
-                                <Card.Content slot="content">
-                                    <Media>
-                                        <Media.Content>
-                                            <Media.Content.Title
-                                                >Transaction on Block Explorer</Media.Content.Title
-                                            >
-                                            <Media.Content.Description
-                                                ><a
-                                                    class="text-blue-500 underline hover:no-underline font-medium"
-                                                    href={finalizeWithdrawTxUrl}
-                                                    target="_blank"
-                                                    >{finalizeWithdrawTxUrl}</a
-                                                ></Media.Content.Description
-                                            >
-                                        </Media.Content>
-                                    </Media>
-                                </Card.Content>
-                            </Card>
+                            <TxCard {finalizeWithdrawTxUrl} />
                         {/if}
                     </div>
                 </div>
